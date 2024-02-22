@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculate</title>
+    <link rel="stylesheet" href="calculate.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="number1">
+        <label for="">number1</label>
+        <input id="number1-input" placeholder="number1" type="number" />
+      </div>
+      <div>
+        <input id="oprator-input" type="text" name="" id="" />
+      </div>
+      <div id="number2">
+        <label for="">number2</label>
+        <input id="number2-input" placeholder="number2" type="number" />
+      </div>
+      <button onclick="resultshow()">calculate</button>
+      <p id="result">Result will appare here</p>
+    </div>
+    <script>
+      function resultshow() {
+        var x = document.getElementById("number1-input").value;
+        var y = document.getElementById("oprator-input").value;
+        var z = document.getElementById("number2-input").value;
+
+        x = Number(x);
+        z = Number(z);
+
+        var result;
+        if (y === "+") {
+          result = x + z;
+        } else if (y === "-") {
+          result = x - z;
+        } else if (y === "*") {
+          result = x * z;
+        } else if (y === "/") {
+          result = x / z;
+        }
+
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
